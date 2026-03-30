@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --color-brand-red: #c41e3a;
+  --color-brand-red-dark: #9e1830;
+  --color-brand-gold: #d4a853;
+  --color-brand-gold-light: #e8c97a;
+  --color-brand-dark: #0a0a0a;
+  --color-brand-darker: #050505;
+  --color-brand-gray: #1a1a1a;
+  --color-brand-light: #f5f0e8;
+  --color-brand-muted: #8a8278;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-brand-darker);
+  color: var(--color-brand-light);
+}
+
+::selection {
+  background-color: var(--color-brand-red);
+  color: white;
+}
+
+/* ---- Animations ---- */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes line-grow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.15; }
+  50%      { opacity: 0.25; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(6px); opacity: 0.5; }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.visible {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.reveal-left {
+  opacity: 0;
+}
+.reveal-left.visible {
+  animation: fade-left 0.8s ease-out forwards;
+}
+
+.reveal-right {
+  opacity: 0;
+}
+.reveal-right.visible {
+  animation: fade-right 0.8s ease-out forwards;
+}
+
+.reveal-scale {
+  opacity: 0;
+}
+.reveal-scale.visible {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s !important; }
+.stagger-2 { animation-delay: 0.2s !important; }
+.stagger-3 { animation-delay: 0.3s !important; }
+.stagger-4 { animation-delay: 0.4s !important; }
+.stagger-5 { animation-delay: 0.5s !important; }
+.stagger-6 { animation-delay: 0.6s !important; }
